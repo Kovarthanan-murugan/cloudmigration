@@ -15,9 +15,8 @@ GET http://localhost:5000/data_pegawai/nik/223344
 ### get Single Data Pegawai by NAME
 GET http://localhost:5000/data_pegawai/name/budi
 
-### Create Data Pegawai
+### Create Data zPegawai
 POST http://localhost:5000/data_pegawai
-Content-Type: application/json
 
 {
     "nik": 223344,
