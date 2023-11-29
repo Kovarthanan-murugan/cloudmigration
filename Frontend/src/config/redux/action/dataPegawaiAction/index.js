@@ -19,7 +19,7 @@ import {
     DELETE_DATA_PEGAWAI_FAILURE
 } from './dataPegawaiActionTypes';
 
-const API_URL = 'http://localhost:5000';
+const API_URL = 'http://44.203.196.125:5000';
 
 export const getDataPegawai = () => {
     return async (dispatch) => {

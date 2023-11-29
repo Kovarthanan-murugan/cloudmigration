@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_BASE_URL = 'http://localhost:5000';
+const API_BASE_URL = 'http://44.203.196.125:5000';
 
 export const changePasswordRequest = () => ({
   type: 'CHANGE_PASSWORD_REQUEST',
