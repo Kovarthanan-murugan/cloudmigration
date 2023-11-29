@@ -25,7 +25,8 @@ dotenv.config();
 
 // Middleware
 app.use(session({
-    secret: process.env.SESS_SECRET,
+    // secret: process.env.SESS_SECRET,
+    secret: "kova",
     resave: false,
     saveUninitialized: true,
     store: store,
@@ -36,7 +37,7 @@ app.use(session({
 
 app.use(cors ({
     credentials: true,
-    origin: 'http://localhost:5173'
+    origin: '*'
 }));
 
 
@@ -50,6 +51,6 @@ app.use(AuthRoute);
 
 // store.sync();
 
-app.listen(process.env.APP_PORT, () => {
+app.listen(5000, () => {
     console.log('Server up and running...');
 });
