@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_BASE_URL = 'http://44.203.196.125:5000';
+const API_BASE_URL = 'https://zv830b3qy2.execute-api.us-east-1.amazonaws.com';
 
 export const changePasswordRequest = () => ({
   type: 'CHANGE_PASSWORD_REQUEST',

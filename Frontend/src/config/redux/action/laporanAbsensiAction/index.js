@@ -17,11 +17,11 @@ export const fetchLaporanAbsensiFailure = (error) => ({
 export const clearLaporanAbsensi = () => ({
     type: CLEAR_LAPORAN_ABSENSI,
 });
-
+let api = 'https://zv830b3qy2.execute-api.us-east-1.amazonaws.com'
 export const fetchLaporanAbsensiByYear = (selectedYear, onDataFound) => async (dispatch) => {
     try {
         const response = await axios.get(
-            `http://44.203.196.125:5000/laporan/absensi/year/${selectedYear}`
+            `${api}/laporan/absensi/year/${selectedYear}`
         );
         const data = response.data;
         dispatch(fetchLaporanAbsensiSuccess(data));
@@ -36,7 +36,7 @@ export const fetchLaporanAbsensiByYear = (selectedYear, onDataFound) => async (d
 export const fetchLaporanAbsensiByMonth = (selectedMonth, onDataFound) => async (dispatch) => {
     try {
         const response = await axios.get(
-            `http://44.203.196.125:5000/laporan/absensi/month/${selectedMonth}`
+            `${api}/laporan/absensi/month/${selectedMonth}`
         );
         const data = response.data;
         dispatch(fetchLaporanAbsensiSuccess(data));

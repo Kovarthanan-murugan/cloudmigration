@@ -17,11 +17,12 @@ export const fetchLaporanGajiFailure = (error) => ({
 export const clearLaporanGaji = () => ({
     type: CLEAR_LAPORAN_GAJI,
 });
+let api = 'https://zv830b3qy2.execute-api.us-east-1.amazonaws.com'
 
 export const fetchLaporanGajiByYear = (selectedYear, onDataFound) => async (dispatch) => {
     try {
         const response = await axios.get(
-            `http://44.203.196.125:5000/laporan/gaji/year/${selectedYear}`
+            `${api}/laporan/gaji/year/${selectedYear}`
         );
         const data = response.data;
         dispatch(fetchLaporanGajiSuccess(data));
@@ -36,7 +37,7 @@ export const fetchLaporanGajiByYear = (selectedYear, onDataFound) => async (disp
 export const fetchLaporanGajiByMonth = (selectedMonth, onDataFound) => async (dispatch) => {
     try {
         const response = await axios.get(
-            `http://44.203.196.125:5000/laporan/gaji/month/${selectedMonth}`
+            `${api}/laporan/gaji/month/${selectedMonth}`
         );
         const data = response.data;
         dispatch(fetchLaporanGajiSuccess(data));

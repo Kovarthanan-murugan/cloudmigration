@@ -10,7 +10,7 @@ import {
     DELETE_DATA_POTONGAN_FAILURE
 } from './dataPotonganActionTypes';
 
-const API_URL = 'http://44.203.196.125:5000';
+const API_URL = 'https://zv830b3qy2.execute-api.us-east-1.amazonaws.com';
 
 export const getDataPotongan = () => {
     return async (dispatch) => {
