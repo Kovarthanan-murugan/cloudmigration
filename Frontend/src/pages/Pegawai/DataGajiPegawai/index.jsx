@@ -8,7 +8,7 @@ import { getMe, viewGajiSinglePegawaiByMonth, viewGajiSinglePegawaiByName, viewG
 import axios from "axios";
 import { TfiPrinter } from "react-icons/tfi";
 import { MdKeyboardDoubleArrowLeft, MdKeyboardDoubleArrowRight } from "react-icons/md";
-
+let api = "https://4vaoduobal.execute-api.us-east-1.amazonaws.com"
 const ITEMS_PER_PAGE = 4;
 
 const DataGajiPegawai = () => {
@@ -118,7 +118,7 @@ const DataGajiPegawai = () => {
   useEffect(() => {
     const getDataPegawai = async () => {
       try {
-        const response = await axios.get(`http://localhost:5000/data_gaji/name/${nama_pegawai}`);
+        const response = await axios.get(`${api}/data_gaji/name/${nama_pegawai}`);
         const data = response.data;
 
         setDataGajiPegawai(data);
