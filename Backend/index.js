@@ -36,7 +36,8 @@ app.use(session({
 }));
 
 app.use(cors ({
-    origin: '*'
+    credentials: true,
+    origin: 'https://main.d27qzwgw4v8vhm.amplifyapp.com/'
 }));
 
 
