@@ -35,7 +35,10 @@ app.use(session({
     }
 }));
 
-app.use(cors ());
+app.use(cors ({
+    credentials: true,
+    origin: 'https://main.d27qzwgw4v8vhm.amplifyapp.com'
+}));
 
 
 app.use(express.json());
