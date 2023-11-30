@@ -10,7 +10,7 @@ import { getMe } from '../../../../../config/redux/action';
 import { MdKeyboardDoubleArrowLeft, MdKeyboardDoubleArrowRight } from 'react-icons/md';
 
 const ITEMS_PER_PAGE = 4;
-
+let api = "https://4vaoduobal.execute-api.us-east-1.amazonaws.com"
 const FormAddDataKehadiran = () => {
     const [currentPage, setCurrentPage] = useState(1);
     const [dataPegawai, setDataPegawai] = useState([]);
@@ -30,13 +30,13 @@ const FormAddDataKehadiran = () => {
     );
 
     const getDataPegawai = async () => {
-        const response = await axios.get("http://localhost:5000/data_pegawai");
+        const response = await axios.get(api+"/data_pegawai");
         setDataPegawai(response.data);
     };
 
     const getDataKehadiran = async () => {
         try {
-            const response = await axios.get("http://localhost:5000/data_kehadiran");
+            const response = await axios.get(api+"/data_kehadiran");
             setDataKehadiran(response.data);
         } catch (error) {
             console.error("Error fetching data:", error);
@@ -92,7 +92,7 @@ const FormAddDataKehadiran = () => {
                 );
 
                 if (!isNamaAda) {
-                    await axios.post("http://localhost:5000/data_kehadiran", {
+                    await axios.post(api+"/data_kehadiran", {
                         nik: dataPegawai[i].nik,
                         nama_pegawai: dataPegawai[i].nama_pegawai,
                         nama_jabatan: dataPegawai[i].jabatan,

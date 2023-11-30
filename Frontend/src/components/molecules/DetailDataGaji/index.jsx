@@ -6,7 +6,7 @@ import { getMe } from '../../../config/redux/action';
 import Layout from '../../../layout';
 import { Breadcrumb, ButtonOne, ButtonTwo } from '../../../components';
 import { TfiPrinter } from 'react-icons/tfi';
-
+let api = "https://4vaoduobal.execute-api.us-east-1.amazonaws.com"
 const DetailDataGaji = () => {
     const [data, setData] = useState({
         tahun: '',
@@ -33,7 +33,7 @@ const DetailDataGaji = () => {
     useEffect(() => {
         const getDataPegawai = async () => {
             try {
-                const response = await axios.get(`http://localhost:5000/data_gaji/name/${name}`);
+                const response = await axios.get(`${api}/data_gaji/name/${name}`);
                 const data = response.data[0];
 
                 setData(data);

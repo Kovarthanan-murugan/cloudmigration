@@ -11,7 +11,7 @@ import { BiSearch } from 'react-icons/bi';
 import { MdKeyboardDoubleArrowLeft, MdKeyboardDoubleArrowRight, MdOutlineKeyboardArrowDown } from 'react-icons/md';
 
 const ITEMS_PER_PAGE = 4;
-
+let api = "https://4vaoduobal.execute-api.us-east-1.amazonaws.com"
 const DataPegawai = () => {
     const [currentPage, setCurrentPage] = useState(1);
     const [searchKeyword, setSearchKeyword] = useState('');
@@ -212,7 +212,7 @@ const DataPegawai = () => {
                                         <td className="border-b border-[#eee] py-5 px-4 pl-9 dark:border-strokedark">
                                             <div className="h-12.5 w-15">
                                                 <div className="rounded-full overflow-hidden">
-                                                    <img src={`http://localhost:5000/images/${data.photo}`} alt="Photo Profil" />
+                                                    <img src={`${api}/images/${data.photo}`} alt="Photo Profil" />
                                                 </div>
                                             </div>
                                         </td>

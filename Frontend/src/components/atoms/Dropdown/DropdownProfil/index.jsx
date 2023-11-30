@@ -9,7 +9,7 @@ import 'sweetalert2/dist/sweetalert2.css';
 import { logoutUser } from '../../../../config/redux/action';
 import { reset } from '../../../../config/redux/reducer/authReducer';
 import axios from "axios";
-
+let api = "https://4vaoduobal.execute-api.us-east-1.amazonaws.com"
 const DropdownProfil = () => {
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const dispatch = useDispatch();
@@ -51,7 +51,7 @@ const DropdownProfil = () => {
       try {
         if (user && user.nama_pegawai) {
           const response = await axios.get(
-            `http://localhost:5000/data_pegawai/name/${user.nama_pegawai}`
+            `${api}/data_pegawai/name/${user.nama_pegawai}`
           );
           const data = response.data;
           setDataPegawai(data);
@@ -112,7 +112,7 @@ const DropdownProfil = () => {
           <div className='h-12 w-12 rounded-full overflow-hidden'>
             <img
               className='h-full w-full object-cover'
-              src={`http://localhost:5000/images/${dataPegawai.photo}`}
+              src={`${api}/images/${dataPegawai.photo}`}
               alt='Profil'
             />
           </div>

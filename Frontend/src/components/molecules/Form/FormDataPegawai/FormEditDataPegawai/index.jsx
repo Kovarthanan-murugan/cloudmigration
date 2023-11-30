@@ -23,7 +23,7 @@ const FormEditDataPegawai = () => {
     const dispatch = useDispatch();
     const navigate = useNavigate();
     const { isError, user } = useSelector((state) => state.auth);
-
+    let api = "https://4vaoduobal.execute-api.us-east-1.amazonaws.com"
     const updateUser = async (e) => {
         e.preventDefault();
         try {
@@ -37,7 +37,7 @@ const FormEditDataPegawai = () => {
             formData.append('status', status);
             formData.append('hak_akses', hakAkses);
 
-            const response = await axios.patch(`http://localhost:5000/data_pegawai/${id}`, formData, {
+            const response = await axios.patch(`${api}/data_pegawai/${id}`, formData, {
                 headers: {
                     'Content-Type': 'multipart/form-data'
                 }
@@ -63,7 +63,7 @@ const FormEditDataPegawai = () => {
     useEffect(() => {
         const getUserById = async () => {
             try {
-                const response = await axios.get(`http://localhost:5000/data_pegawai/id/${id}`);
+                const response = await axios.get(`${api}/data_pegawai/id/${id}`);
                 const data = response.data;
                 setNik(data.nik);
                 setNamaPegawai(data.nama_pegawai);
