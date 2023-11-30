@@ -6,7 +6,7 @@ import { verifyUser } from "../middleware/AuthUser.js";
 // method untuk dashboard pegawai
 export const dashboardPegawai = async (req, res) => {
     await verifyUser(req, res, () => {});
-
+z
     const userId = req.userId;
 
     const response = await DataPegawai.findOne({
