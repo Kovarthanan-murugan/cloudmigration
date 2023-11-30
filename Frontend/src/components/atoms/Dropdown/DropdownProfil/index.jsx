@@ -9,7 +9,7 @@ import 'sweetalert2/dist/sweetalert2.css';
 import { logoutUser } from '../../../../config/redux/action';
 import { reset } from '../../../../config/redux/reducer/authReducer';
 import axios from "axios";
-let api = "https://4vaoduobal.execute-api.us-east-1.amazonaws.com"
+let api = "https://ru1dh7cchi.execute-api.us-east-1.amazonaws.com"
 const DropdownProfil = () => {
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const dispatch = useDispatch();

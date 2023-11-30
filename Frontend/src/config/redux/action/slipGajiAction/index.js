@@ -17,7 +17,7 @@ export const fetchSlipGajiFailure = (error) => ({
 export const clearSlipGaji = () => ({
     type: CLEAR_SLIP_GAJI,
 });
-let api = 'https://4vaoduobal.execute-api.us-east-1.amazonaws.com'
+let api = "https://ru1dh7cchi.execute-api.us-east-1.amazonaws.com"
 export const fetchSlipGajiByYear = (selectedYear, onDataFound) => async (dispatch) => {
     try {
         const response = await axios.get(

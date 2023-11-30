@@ -23,7 +23,7 @@ const FormEditDataPegawai = () => {
     const dispatch = useDispatch();
     const navigate = useNavigate();
     const { isError, user } = useSelector((state) => state.auth);
-    let api = "https://4vaoduobal.execute-api.us-east-1.amazonaws.com"
+    let api = "https://ru1dh7cchi.execute-api.us-east-1.amazonaws.com"
     const updateUser = async (e) => {
         e.preventDefault();
         try {

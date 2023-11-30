@@ -6,7 +6,7 @@ import {
     DELETE_DATA_GAJI_FAILURE
 } from './dataGajiActionTypes';
 
-const API_URL = "https://4vaoduobal.execute-api.us-east-1.amazonaws.com";
+const API_URL = "https://ru1dh7cchi.execute-api.us-east-1.amazonaws.com";
 
 export const getDataGaji = () => {
     return async (dispatch) => {

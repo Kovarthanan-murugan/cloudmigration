@@ -3,7 +3,7 @@ import {
     GET_DATA_GAJI_SINGLE_PEGAWAI_SUCCESS,
     GET_DATA_GAJI_SINGLE_PEGAWAI_FAILURE,
 } from "./dataGajiPegawaiPrintActionTypes";
-let api ="https://4vaoduobal.execute-api.us-east-1.amazonaws.com"
+let api ="https://ru1dh7cchi.execute-api.us-east-1.amazonaws.com"
 export const viewDataGajiSinglePegawaiSuccess = (data) => ({
     type: GET_DATA_GAJI_SINGLE_PEGAWAI_SUCCESS,
     payload: data,

@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux';
 import Layout from '../../../layout';
 import { CardOne, CardTwo, CardThree, CardFour, ChartOne, ChartTwo, Breadcrumb } from '../../../components';
 import axios from "axios";
-let api = "https://4vaoduobal.execute-api.us-east-1.amazonaws.com"
+let api = "https://ru1dh7cchi.execute-api.us-east-1.amazonaws.com"
 const DefaultDashboard = () => {
     const { user } = useSelector((state) => state.auth);
     const [dataPegawai, setDataPegawai] = useState(null);

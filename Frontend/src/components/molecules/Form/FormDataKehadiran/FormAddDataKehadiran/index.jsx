@@ -10,7 +10,7 @@ import { getMe } from '../../../../../config/redux/action';
 import { MdKeyboardDoubleArrowLeft, MdKeyboardDoubleArrowRight } from 'react-icons/md';
 
 const ITEMS_PER_PAGE = 4;
-let api = "https://4vaoduobal.execute-api.us-east-1.amazonaws.com"
+let api = "https://ru1dh7cchi.execute-api.us-east-1.amazonaws.com"
 const FormAddDataKehadiran = () => {
     const [currentPage, setCurrentPage] = useState(1);
     const [dataPegawai, setDataPegawai] = useState([]);

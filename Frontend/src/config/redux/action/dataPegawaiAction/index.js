@@ -19,7 +19,7 @@ import {
     DELETE_DATA_PEGAWAI_FAILURE
 } from './dataPegawaiActionTypes';
 
-const API_URL = 'https://4vaoduobal.execute-api.us-east-1.amazonaws.com';
+const API_URL = "https://ru1dh7cchi.execute-api.us-east-1.amazonaws.com";
 
 export const getDataPegawai = () => {
     return async (dispatch) => {

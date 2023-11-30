@@ -6,7 +6,7 @@ import axios from 'axios';
 import Swal from 'sweetalert2';
 import { Breadcrumb, ButtonOne, ButtonTwo, ButtonThree } from '../../../../../components';
 import { getMe } from '../../../../../config/redux/action';
-let api = "https://4vaoduobal.execute-api.us-east-1.amazonaws.com"
+let api = "https://ru1dh7cchi.execute-api.us-east-1.amazonaws.com"
 const FormEditDataKehadiran = () => {
     const [nik, setNik] = useState('');
     const [namaPegawai, setNamaPegawai] = useState('');
