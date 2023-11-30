@@ -21,9 +21,9 @@ const UbahPasswordPegawai = () => {
             try {
                 dispatch(changePassword(password, confPassword));
                 Swal.fire({
-                    icon: 'success',data_pegawai
+                    icon: 'success',
                     title: 'Berhasil',
-                    text: 'Password Berhasil di Perbarui',
+                    text: 'Password Berhasil di Perbarui',data_pegawai
                     showConfirmButton: false,
                     timer: 1500,
                 });
