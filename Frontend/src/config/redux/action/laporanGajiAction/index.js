@@ -17,7 +17,7 @@ export const fetchLaporanGajiFailure = (error) => ({
 export const clearLaporanGaji = () => ({
     type: CLEAR_LAPORAN_GAJI,
 });
-let api = 'https://zv830b3qy2.execute-api.us-east-1.amazonaws.com'
+let api = 'https://4vaoduobal.execute-api.us-east-1.amazonaws.com'
 
 export const fetchLaporanGajiByYear = (selectedYear, onDataFound) => async (dispatch) => {
     try {

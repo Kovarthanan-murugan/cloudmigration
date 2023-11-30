@@ -9,7 +9,7 @@ import {
     DELETE_DATA_KEHADIRAN_SUCCESS,
     DELETE_DATA_KEHADIRAN_FAILURE
 } from './dataKehadiranActionTypes';
-let api = "https://zv830b3qy2.execute-api.us-east-1.amazonaws.com"
+let api = "https://4vaoduobal.execute-api.us-east-1.amazonaws.com"
 export const getDataKehadiran = () => {
     return async (dispatch) => {
         try {

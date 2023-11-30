@@ -1,6 +1,6 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
-let api = "https://zv830b3qy2.execute-api.us-east-1.amazonaws.com"
+let api = "https://4vaoduobal.execute-api.us-east-1.amazonaws.com"
 export const loginUser = createAsyncThunk(
   "user/loginUser",
   async (user, thunkAPI) => {
