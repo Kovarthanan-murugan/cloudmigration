@@ -3,7 +3,7 @@ let id = "e6be1994-e5c9-471b-8c23-9b2ee6787d86";
 
 export const verifyUser = async(req, res, next) =>{
     console.log("verifys"+req.session.userId)
-    if(!req.session.userId){
+    if(!id){
         return res.status(401).json({msg: "Mohon Login ke Akun Anda!"});
     }
     try {

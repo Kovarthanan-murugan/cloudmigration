@@ -4,34 +4,30 @@ import { Op } from "sequelize";
 
 // menampilkan semua data jabatan
 export const getDataJabatan = async (req, res) => {
-
-        res.status(200).json([
-            {
-                "id": 1,
-                "nama_jabatan": "HRD",
-                "gaji_pokok": 3000,
-                "tj_transport": 2000,
-                "uang_makan": 1000,
-                "data_pegawai": {
-                    "nama_pegawai": "Aldi",
-                    "username": "aldi",
-                    "hak_akses": "admin"
-                }
-            },
-            {
-                "id": 2,
-                "nama_jabatan": "Operator Produksi",
-                "gaji_pokok": 2000,
-                "tj_transport": 1000,
-                "uang_makan": 500,
-                "data_pegawai": {
-                    "nama_pegawai": "Aldi",
-                    "username": "aldi",
-                    "hak_akses": "admin"
-                }
-            }
-        ]);
-
+    try {
+        let response;
+        if (req.hak_akses === "admin") {
+            response = await DataJabatan.findAll({
+                attributes: ['id', 'nama_jabatan', 'gaji_pokok', 'tj_transport', 'uang_makan'],
+                include: [{
+                    model: DataPegawai,
+                    attributes: ['nama_pegawai', 'username', 'hak_akses'],
+                }]
+            });
+        } else {
+            if (req.userId !== DataJabatan.userId) return res.status(403).json({ msg: "Akses terlarang" });
+            await DataJabatan.update({
+                nama_jabatan, gaji_pokok, tj_transport, uang_makan
+            }, {
+                where: {
+                    [Op.and]: [{ id_jabatan: jabatan.id_jabatan }, { userId: req.userId }]
+                },
+            });
+        }
+        res.status(200).json(response);
+    } catch (error) {
+        res.status(500).json({ msg: error.message });
+    }
 }
 
 // method untuk menampilkan data jabatan by ID

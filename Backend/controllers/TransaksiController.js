@@ -7,22 +7,55 @@ import "moment/locale/id.js";
 
 // method untuk menampilkan semua Data Kehadiran
 export const viewDataKehadiran = async (req, res) => {
+  let resultDataKehadiran = [];
+  try {
+    // Get data kehadiran
+    const data_Kehadiran = await DataKehadiran.findAll({
+      attributes: [
+        "id",
+        "bulan",
+        "nik",
+        "nama_pegawai",
+        "jenis_kelamin",
+        "nama_jabatan",
+        "hadir",
+        "sakit",
+        "alpha",
+        "createdAt",
+      ],
+      distinct: true,
+    });
 
-    res.json([
-      {
-          "id": 1,
-          "bulan": "juni",
-          "tahun": 2023,
-          "nik": "112233",
-          "nama_pegawai": "Aldi",
-          "jabatan_pegawai": "HRD",
-          "jenis_kelamin": "Laki - Laki",
-          "hadir": 9,
-          "sakit": 2,
-          "alpha": 1
-      }
-  ]);
+    resultDataKehadiran = data_Kehadiran.map((kehadiran) => {
+      const id = kehadiran.id;
+      const createdAt = new Date(kehadiran.createdAt);
+      const tahun = createdAt.getFullYear();
+      const bulan = kehadiran.bulan;
+      const nik = kehadiran.nik;
+      const nama_pegawai = kehadiran.nama_pegawai;
+      const jabatan_pegawai = kehadiran.nama_jabatan;
+      const jenis_kelamin = kehadiran.jenis_kelamin;
+      const hadir = kehadiran.hadir;
+      const sakit = kehadiran.sakit;
+      const alpha = kehadiran.alpha;
 
+      return {
+        id,
+        bulan,
+        tahun,
+        nik,
+        nama_pegawai,
+        jabatan_pegawai,
+        jenis_kelamin,
+        hadir,
+        sakit,
+        alpha,
+      };
+    });
+    res.json(resultDataKehadiran);
+  } catch (error) {
+    console.log(error);
+  }
 };
 
 // method untuk menampilkan Data Kehadiran by ID
