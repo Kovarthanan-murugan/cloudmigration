@@ -36,7 +36,6 @@ app.use(session({
 }));
 
 app.use(cors ({
-    credentials: true,
     origin: '*'
 }));
 
