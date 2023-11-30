@@ -37,7 +37,7 @@ app.use(session({
 
 app.use(cors ({
     credentials: true,
-    origin: 'http://localhost:5173'
+    origin: 'https://main.d27qzwgw4v8vhm.amplifyapp.com/'
 }));
 
 
