@@ -3,53 +3,25 @@ import argon2 from "argon2";
 import { verifyUser } from "../middleware/AuthUser.js";
 
 export const Login = async (req, res) => {
-  let user = {};
-  const pegawai = await DataPegawai.findOne({
-    where: {
-      username: req.body.username
-    }
-  });
-
-  if (!pegawai) {
-    return res.status(404).json({ msg: "Data Pegawai Tidak Ditemukan" });
-  }
-
-  const match = true;
-
-  if (!match) {
-    return res.status(400).json({ msg: "Password Salah" });
-  }
-
-  req.session.userId = pegawai.id_pegawai;
-
-  user = {
-    id_pegawai: pegawai.id,
-    nama_pegawai: pegawai.nama_pegawai,
-    username: pegawai.username,
-    hak_akses: pegawai.hak_akses
-  }
 
   res.status(200).json({
-    id_pegawai: user.id_pegawai,
-    nama_pegawai: user.nama_pegawai,
-    username: user.username,
-    hak_akses: user.hak_akses,
-    msg: "Login Berhasil"
-  });
+    "id_pegawai": 1,
+    "nama_pegawai": "Aldi",
+    "username": "aldi",
+    "hak_akses": "admin",
+    "msg": "Login Berhasil"
+});
 };
 
 export const Me = async (req, res) => {
-  if (!req.session.userId) {
-    return res.status(401).json({ msg: "Mohon Login ke Akun Anda!" });
-  }
-  const pegawai = await DataPegawai.findOne({
-    attributes: ['id', 'nik', 'nama_pegawai', 'username', 'hak_akses'],
-    where: {
-      id_pegawai: req.session.userId
-    }
-  });
-  if (!pegawai) return res.status(404).json({ msg: "User Tidak di Temukan" });
-  res.status(200).json(pegawai);
+  
+  res.status(200).json({
+    "id": 1,
+    "nik": "112233",
+    "nama_pegawai": "Aldi",
+    "username": "aldi",
+    "hak_akses": "admin"
+});
 }
 
 export const LogOut = (req, res) => {

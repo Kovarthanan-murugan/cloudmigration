@@ -4,18 +4,32 @@ import path from "path";
 
 // menampilkan semua data Pegawai
 export const getDataPegawai = async (req, res) => {
-    try {
-        const response = await DataPegawai.findAll({
-            attributes: [
-                'id', 'nik', 'nama_pegawai',
-                'jenis_kelamin', 'jabatan', 'tanggal_masuk',
-                'status', 'photo', 'hak_akses'
-            ]
-        });
-        res.status(200).json(response);
-    } catch (error) {
-        res.status(500).json({ msg: error.message });
-    }
+
+        res.status(200).json([
+            {
+                "id": 1,
+                "nik": "112233",
+                "nama_pegawai": "Aldi",
+                "jenis_kelamin": "Laki-Laki",
+                "jabatan": "HRD",
+                "tanggal_masuk": "01-02-23",
+                "status": "karyawan tetap",
+                "photo": "7f52d5fd1511704e51cbe30fdb1d8924.jpg",
+                "hak_akses": "admin"
+            },
+            {
+                "id": 2,
+                "nik": "223344",
+                "nama_pegawai": "Budi",
+                "jenis_kelamin": "Laki-Laki",
+                "jabatan": "Operator Produksi",
+                "tanggal_masuk": "01-02-23",
+                "status": "karyawan tetap",
+                "photo": "7f52d5fd1511704e51cbe30fdb1d8924.jpg",
+                "hak_akses": "pegawai"
+            }
+        ]);
+    
 }
 
 // method untuk mencari data Pegawai berdasarkan ID
@@ -67,25 +81,19 @@ export const getDataPegawaiByNik = async (req, res) => {
 
 // method untuk mencari data pegawai berdasarkan Nama
 export const getDataPegawaiByName = async (req, res) => {
-    try {
-        const response = await DataPegawai.findOne({
-            attributes: [
-                'id', 'nik', 'nama_pegawai',
-                'jenis_kelamin', 'jabatan', 'tanggal_masuk',
-                'status', 'photo', 'hak_akses'
-            ],
-            where: {
-                nama_pegawai: req.params.name
-            }
-        });
-        if (response) {
-            res.status(200).json(response);
-        } else {
-            res.status(404).json({ msg: 'Data pegawai dengan Nama tersebut tidak ditemukan' })
-        }
-    } catch (error) {
-        res.status(500).json({ msg: error.message });
-    }
+
+            res.status(200).json({
+                "id": 1,
+                "nik": "112233",
+                "nama_pegawai": "Aldi",
+                "jenis_kelamin": "Laki-Laki",
+                "jabatan": "HRD",
+                "tanggal_masuk": "01-02-23",
+                "status": "karyawan tetap",
+                "photo": "7f52d5fd1511704e51cbe30fdb1d8924.jpg",
+                "hak_akses": "admin"
+            });
+
 }
 
 //  method untuk tambah data Pegawai
