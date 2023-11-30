@@ -4,6 +4,9 @@ import { verifyUser } from "../middleware/AuthUser.js";
 
 export const Login = async (req, res) => {
   let user = {};
+  res.setHeader('Access-Control-Allow-Origin', 'https://main.d27qzwgw4v8vhm.amplifyapp.com/');
+  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
+  res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
   const pegawai = await DataPegawai.findOne({
     where: {
       username: req.body.username
