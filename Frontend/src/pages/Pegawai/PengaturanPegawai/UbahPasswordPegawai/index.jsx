@@ -23,7 +23,7 @@ const UbahPasswordPegawai = () => {
                 Swal.fire({
                     icon: 'success',
                     title: 'Berhasil',
-                    text: 'Password Berhasil di Perbarui',data_pegawai
+                    text: 'Password Berhasil di Perbarui',
                     showConfirmButton: false,
                     timer: 1500,
                 });
