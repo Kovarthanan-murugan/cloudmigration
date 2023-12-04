@@ -27,7 +27,7 @@ export const testLoadBalancer = async (req, res) => {
                 'status', 'photo', 'hak_akses'
             ]
         });
-        res.status(200).json({"message":"got response from server2"});
+        res.status(200).json({"message":"got response from server1"});
     } catch (error) {
         res.status(500).json({ msg: error.message });
     }
