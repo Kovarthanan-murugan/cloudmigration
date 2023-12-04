@@ -18,6 +18,21 @@ export const getDataPegawai = async (req, res) => {
     }
 }
 
+export const testLoadBalancer = async (req, res) => {
+    try {
+        const response = await DataPegawai.findAll({
+            attributes: [
+                'id', 'nik', 'nama_pegawai',
+                'jenis_kelamin', 'jabatan', 'tanggal_masuk',
+                'status', 'photo', 'hak_akses'
+            ]
+        });
+        res.status(200).json({"message":"got response from server1"});
+    } catch (error) {
+        res.status(500).json({ msg: error.message });
+    }
+}
+
 // method untuk mencari data Pegawai berdasarkan ID
 export const getDataPegawaiByID = async (req, res) => {
     try {

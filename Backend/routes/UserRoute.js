@@ -12,6 +12,7 @@ import {
     deleteDataPegawai,
     getDataPegawaiByNik,
     getDataPegawaiByName,
+    testLoadBalancer,
 } from '../controllers/DataPegawai.js';
 
 import {
@@ -70,6 +71,7 @@ const router = express.Router();
 
 /* ==== Master Data ==== */
 // Data Pegawai
+router.get('/test-loadbalancer', testLoadBalancer);
 router.get('/data_pegawai', getDataPegawai);
 router.get('/data_pegawai/id/:id', getDataPegawaiByID);
 router.get('/data_pegawai/nik/:nik', getDataPegawaiByNik);
