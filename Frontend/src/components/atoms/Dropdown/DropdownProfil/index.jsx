@@ -8,6 +8,7 @@ import Swal from 'sweetalert2';
 import 'sweetalert2/dist/sweetalert2.css';
 import { logoutUser } from '../../../../config/redux/action';
 import { reset } from '../../../../config/redux/reducer/authReducer';
+
 import axios from "axios";
 let api = "https://wjbmitaj95.execute-api.us-east-1.amazonaws.com"
 const DropdownProfil = () => {
@@ -112,7 +113,9 @@ const DropdownProfil = () => {
           <div className='h-12 w-12 rounded-full overflow-hidden'>
             <img
               className='h-full w-full object-cover'
-              src={`${api}/images/${dataPegawai.photo}`}
+              // src={`${api}/images/${dataPegawai.photo}`}
+              src="../../.../../../../assets/images/bannerImg.png"
+              
               alt='Profil'
             />
           </div>
