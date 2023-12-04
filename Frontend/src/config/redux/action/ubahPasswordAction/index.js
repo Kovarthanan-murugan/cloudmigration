@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_BASE_URL = 'https://zv830b3qy2.execute-api.us-east-1.amazonaws.com';
+const API_BASE_URL = 'https://wjbmitaj95.execute-api.us-east-1.amazonaws.comm';
 
 export const changePasswordRequest = () => ({
   type: 'CHANGE_PASSWORD_REQUEST',

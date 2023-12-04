@@ -6,7 +6,7 @@ import { getMe } from '../../../config/redux/action';
 import Layout from '../../../layout';
 import { Breadcrumb, ButtonOne, ButtonTwo } from '../../../components';
 import { TfiPrinter } from 'react-icons/tfi';
-let api = "https://ru1dh7cchi.execute-api.us-east-1.amazonaws.com"
+let api = "https://wjbmitaj95.execute-api.us-east-1.amazonaws.com"
 const DetailDataGaji = () => {
     const [data, setData] = useState({
         tahun: '',

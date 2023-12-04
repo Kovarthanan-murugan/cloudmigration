@@ -8,7 +8,7 @@ import { getMe, viewGajiSinglePegawaiByMonth, viewGajiSinglePegawaiByName, viewG
 import axios from "axios";
 import { TfiPrinter } from "react-icons/tfi";
 import { MdKeyboardDoubleArrowLeft, MdKeyboardDoubleArrowRight } from "react-icons/md";
-let api = "https://ru1dh7cchi.execute-api.us-east-1.amazonaws.com"
+let api = "https://wjbmitaj95.execute-api.us-east-1.amazonaws.com"
 const ITEMS_PER_PAGE = 4;
 
 const DataGajiPegawai = () => {

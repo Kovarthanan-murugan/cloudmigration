@@ -11,7 +11,7 @@ import { BiSearch } from 'react-icons/bi';
 import { MdKeyboardDoubleArrowLeft, MdKeyboardDoubleArrowRight, MdOutlineKeyboardArrowDown } from 'react-icons/md';
 
 const ITEMS_PER_PAGE = 4;
-let api = "https://ru1dh7cchi.execute-api.us-east-1.amazonaws.com"
+let api = "https://wjbmitaj95.execute-api.us-east-1.amazonaws.com"
 const DataPegawai = () => {
     const [currentPage, setCurrentPage] = useState(1);
     const [searchKeyword, setSearchKeyword] = useState('');

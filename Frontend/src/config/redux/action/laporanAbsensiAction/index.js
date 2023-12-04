@@ -17,7 +17,7 @@ export const fetchLaporanAbsensiFailure = (error) => ({
 export const clearLaporanAbsensi = () => ({
     type: CLEAR_LAPORAN_ABSENSI,
 });
-let api = "https://ru1dh7cchi.execute-api.us-east-1.amazonaws.com"
+let api = "https://wjbmitaj95.execute-api.us-east-1.amazonaws.com"
 export const fetchLaporanAbsensiByYear = (selectedYear, onDataFound) => async (dispatch) => {
     try {
         const response = await axios.get(
