@@ -204,6 +204,7 @@ const DataPegawai = () => {
                         </thead>
                         <tbody>
                             {filteredDataPegawai.slice(startIndex, endIndex).map((data, index) => {
+                                let dataa = ["https://images.ctfassets.net/hrltx12pl8hq/28ECAQiPJZ78hxatLTa7Ts/2f695d869736ae3b0de3e56ceaca3958/free-nature-images.jpg?fit=fill&w=1200&h=630","https://media.istockphoto.com/id/486845192/photo/halifax-waterfront-aerial-view.jpg?s=612x612&w=0&k=20&c=FbWA2tUTYDkwLzVMY6WhG6Gf9U5P1SRShV2wtvvAcWg="]
                                 return (
                                     <tr key={data.id}>
                                         <td className="border-b border-[#eee] py-5 px-4 dark:border-strokedark">
@@ -212,7 +213,7 @@ const DataPegawai = () => {
                                         <td className="border-b border-[#eee] py-5 px-4 pl-9 dark:border-strokedark">
                                             <div className="h-12.5 w-15">
                                                 <div className="rounded-full overflow-hidden">
-                                                    <img src={`${api}/images/${data.photo}`} alt="Photo Profil" />
+                                                    <img src={`${api}/images/${dataa[index]}`} alt="Photo Profil" />
                                                 </div>
                                             </div>
                                         </td>
