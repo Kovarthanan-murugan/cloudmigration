@@ -213,7 +213,7 @@ const DataPegawai = () => {
                                         <td className="border-b border-[#eee] py-5 px-4 pl-9 dark:border-strokedark">
                                             <div className="h-12.5 w-15">
                                                 <div className="rounded-full overflow-hidden">
-                                                    <img src={`${api}/images/${dataa[index]}`} alt="Photo Profil" />
+                                                    <img src={dataa[index]} alt="Photo Profil" />
                                                 </div>
                                             </div>
                                         </td>
